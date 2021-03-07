@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/widgets/home/choose_month.dart';
-import 'package:task_manager/widgets/home/date_cards.dart';
-import 'package:task_manager/widgets/home/home_bottom_widget.dart';
-
-import 'bottom_buttons.dart';
 
 // Homepage body structure
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/widgets/home/bottom_buttons.dart';
+import 'package:task_manager_with_xd/widgets/home/choose_month.dart';
+import 'package:task_manager_with_xd/widgets/home/date_cards.dart';
+import 'package:task_manager_with_xd/widgets/home/home_bottom_widget.dart';
+
 class HomepageBody extends StatefulWidget {
   final BuildContext context;
   final String date;

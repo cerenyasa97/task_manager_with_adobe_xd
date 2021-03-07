@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/widgets/home/task_card.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/widgets/home/task_card.dart';
 
 class TaskWidget extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
-import 'package:task_manager/locator/service_locator.dart';
-import 'package:task_manager/models/task.dart';
-import 'package:task_manager/utils/database_helper.dart';
+import 'package:task_manager_with_xd/locator/service_locator.dart';
+import 'package:task_manager_with_xd/models/task.dart';
+import 'package:task_manager_with_xd/utils/database_helper.dart';
 
 class TaskRepository{
 

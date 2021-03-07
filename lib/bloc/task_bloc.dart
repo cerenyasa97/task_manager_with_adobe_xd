@@ -2,9 +2,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:task_manager/data/task_repository.dart';
-import 'package:task_manager/locator/service_locator.dart';
-import 'package:task_manager/models/task.dart';
+import 'package:task_manager_with_xd/data/task_repository.dart';
+import 'package:task_manager_with_xd/locator/service_locator.dart';
+import 'package:task_manager_with_xd/models/task.dart';
+
 
 part 'task_event.dart';
 part 'task_state.dart';

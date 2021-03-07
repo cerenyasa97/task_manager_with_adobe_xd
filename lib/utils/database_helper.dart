@@ -3,9 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:task_manager/models/priority_color.dart';
-import 'package:task_manager/models/task.dart';
 import 'package:synchronized/synchronized.dart';
+import 'package:task_manager_with_xd/models/task.dart';
 
 class DatabaseHelper extends ChangeNotifier {
   static DatabaseHelper _databaseHelper;
@@ -124,20 +123,6 @@ class DatabaseHelper extends ChangeNotifier {
   Future<List<Map<String, dynamic>>> getPriorityColors() async{
     var db = await _getDatabase();
     var result = await db.query("priority_colors");
-    return result;
-  }
-
-  Future<List<PriorityColor>> getPriorityColor() async {
-    List<PriorityColor> priorityColorList = List<PriorityColor>();
-    var map = await getPriorityColors();
-    map.forEach((color) => priorityColorList.add(PriorityColor.fromMap(color)));
-    return priorityColorList;
-  }
-
-  Future<int> updatePriorityColor(PriorityColor priorityColor) async {
-    var db = await _getDatabase();
-    var result = await db.update(
-        "priority_colors", priorityColor.toMap(), where: "priority = ?", whereArgs: [priorityColor.priority]);
     return result;
   }
 }

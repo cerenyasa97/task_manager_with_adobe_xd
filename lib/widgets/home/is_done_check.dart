@@ -1,7 +1,7 @@
 import 'package:circular_check_box/circular_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
 
 // Structure showing the completion status of the task
 class IsDoneCheck extends StatefulWidget {
@@ -37,21 +37,3 @@ class _IsDoneCheckState extends State<IsDoneCheck> {
     );
   }
 }
-
-
-
-/*
-Checkbox(
-            activeColor: Colors.indigo,
-            value: (taskBloc.state as GetTaskState).taskList[widget.index]
-                .isDone == 0 ? false : true,
-            onChanged: (newValue) {
-              (taskBloc.state as GetTaskState).taskList[widget.index].isDone =
-              newValue ? 1 : 0;
-              taskBloc.add(UpdateTaskEvent(
-                  task: (taskBloc.state as GetTaskState).taskList[widget
-                      .index]));
-              taskBloc.add(GetTasksEvent(date: "getLast"));
-            },
-          );
- */

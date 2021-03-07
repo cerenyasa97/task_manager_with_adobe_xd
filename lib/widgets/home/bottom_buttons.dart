@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
 
 class BottomButtons extends StatelessWidget {
   final Function() onTap;

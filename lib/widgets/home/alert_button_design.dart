@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/models/task.dart';
-import 'package:task_manager/screens/create_task.dart';
-import 'package:task_manager/screens/homepage.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/models/task.dart';
 
 // ignore: must_be_immutable
 class AlertButtonDesign extends StatelessWidget {

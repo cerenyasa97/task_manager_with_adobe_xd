@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/models/task.dart';
-import 'package:task_manager/screens/create_task.dart';
-import 'package:task_manager/screens/homepage.dart';
-import 'package:task_manager/widgets/home/alert_button_design.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/models/task.dart';
+import 'package:task_manager_with_xd/screens/create_task.dart';
+import 'package:task_manager_with_xd/widgets/home/alert_button_design.dart';
 
 class AlertDialogButtons extends StatelessWidget {
   final int index;

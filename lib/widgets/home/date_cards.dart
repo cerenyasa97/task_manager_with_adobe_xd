@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/utils/constants.dart';
-import 'package:task_manager/widgets/core/general_app_text.dart';
 import 'package:date_time_format/date_time_format.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/core/general_app_text.dart';
+import 'package:task_manager_with_xd/utils/constants.dart';
 
 class DateCards extends StatelessWidget {
   final int monthIndex;

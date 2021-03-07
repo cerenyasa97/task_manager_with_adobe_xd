@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_manager/bloc/task/task_bloc.dart';
-import 'package:task_manager/widgets/core/general_app_text.dart';
-import 'package:task_manager/widgets/error_widget.dart';
+import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/core/general_app_text.dart';
+import 'package:task_manager_with_xd/widgets/error_widget.dart';
 import 'description_dialog.dart';
 import 'is_done_check.dart';
 import 'last_task_date_time_text.dart';

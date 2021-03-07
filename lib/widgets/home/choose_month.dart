@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/utils/constants.dart';
-import 'package:task_manager/widgets/core/general_app_text.dart';
-import 'package:task_manager/widgets/home/increase_decrease_arrow.dart';
+import 'package:task_manager_with_xd/core/general_app_text.dart';
+import 'package:task_manager_with_xd/utils/constants.dart';
+import 'package:task_manager_with_xd/widgets/home/increase_decrease_arrow.dart';
 
 class ChooseMonth extends StatefulWidget {
 
