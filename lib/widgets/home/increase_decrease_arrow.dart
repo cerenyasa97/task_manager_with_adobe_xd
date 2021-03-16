@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class IncreaseDecreaseArrow extends StatelessWidget {
-
   final Function(int) onTapped;
   final flag;
 
@@ -16,13 +15,15 @@ class IncreaseDecreaseArrow extends StatelessWidget {
         height: MediaQuery.of(context).size.height / 25,
         decoration: BoxDecoration(
           borderRadius:
-          BorderRadius.circular(MediaQuery.of(context).size.height / 25),
-          border: Border.all(width: 2.0, color: Colors.white),
+              BorderRadius.circular(MediaQuery.of(context).size.height / 25),
+          border: Border.all(width: 2.0, color: const Color(0xff5d6798)),
         ),
         padding: EdgeInsets.symmetric(horizontal: flag == "f" ? 8 : 10),
         child: Icon(
-            flag == "f" ? Icons.arrow_back_ios_outlined : Icons.arrow_forward_ios,
-            color: Colors.white,
+            flag == "f"
+                ? Icons.arrow_back_ios_outlined
+                : Icons.arrow_forward_ios,
+            color: const Color(0xff5d6798),
             size: MediaQuery.of(context).size.width / 22),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_manager_with_xd/bloc/task_bloc.dart';
+import 'package:task_manager_with_xd/models/task.dart';
 import 'task_widget.dart';
 import '../error_widget.dart';
 import '../loading.dart';
@@ -18,11 +19,9 @@ class HomeBottomWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is GettingTaskState) {
           return LoadingWidget();
-        }
-        if (state is GetTaskState) {
+        } else if (state is GetTaskState) {
           return TaskWidget();
-        }
-        if (state is TaskGetErrorState) {
+        } else if (state is TaskGetErrorState) {
           return TaskErrorWidget();
         } else {
           return Center(

@@ -35,10 +35,12 @@ class DateCards extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 width: width * 0.13,
                 decoration: BoxDecoration(
-                  color: tappedIndex == index ? Colors.white : Colors.black,
+                  color: tappedIndex == index
+                      ? const Color(0xff5d6798)
+                      : Colors.white,
                   borderRadius: BorderRadius.circular(27.0),
                   border:
-                      Border.all(width: 3.0, color: const Color(0xfffcfcfe)),
+                      Border.all(width: 3.0, color: const Color(0xff5d6798)),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -46,7 +48,9 @@ class DateCards extends StatelessWidget {
                     GeneralAppText(
                       text: (index + 1).toString(),
                       size: 17,
-                      color: index == tappedIndex ? Colors.black : Colors.white,
+                      color: index == tappedIndex
+                          ? Colors.white
+                          : const Color(0xff5d6798),
                     ),
                     GeneralAppText(
                       text: DateTime.parse(DateTime.now().year.toString() +
@@ -60,7 +64,10 @@ class DateCards extends StatelessWidget {
                                   : "${DateTime.now().day + index - 1}"))
                           .format("D"),
                       size: 15,
-                      color: index == tappedIndex ? Colors.black : Colors.white,
+                      weight: FontWeight.bold,
+                      color: index == tappedIndex
+                          ? Colors.white
+                          : const Color(0xff5d6798),
                     )
                   ],
                 ),

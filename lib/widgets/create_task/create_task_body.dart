@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +12,6 @@ import 'package:task_manager_with_xd/widgets/create_task/date_time_picker.dart';
 import 'package:task_manager_with_xd/widgets/create_task/priority.dart';
 import 'package:task_manager_with_xd/widgets/create_task/task_create_separator.dart';
 import 'package:task_manager_with_xd/widgets/task_text_field.dart';
-
 
 // ignore: must_be_immutable
 class CreateTaskBody extends StatefulWidget {
@@ -54,9 +55,14 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        GeneralAppText(text: "Task Title"),
+        GeneralAppText(
+          text: "Task Title",
+          color: const Color(0xff5d6798),
+        ),
         TaskCreateSeparator(
           width: width * 0.9,
+          height: 2,
+          color: const Color(0xff5d6798),
         ),
         TaskTextField(
           initialText:
@@ -68,9 +74,14 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
           marginWidth: width * 0.05,
           height: height * 0.066,
         ),
-        GeneralAppText(text: "Task Description"),
+        GeneralAppText(
+          text: "Task Description",
+          color: const Color(0xff5d6798),
+        ),
         TaskCreateSeparator(
           width: width * 0.9,
+          height: 2,
+          color: const Color(0xff5d6798),
         ),
         TaskTextField(
             initialText: widget.updateTask != null
@@ -87,12 +98,17 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
           children: [
             Column(
               children: [
-                GeneralAppText(text: "Start Date"),
+                GeneralAppText(
+                  text: "Start Date",
+                  color: const Color(0xff5d6798),
+                ),
                 SizedBox(
                   height: height * 0.01,
                 ),
                 TaskCreateSeparator(
                   width: width * 0.3,
+                  height: 2,
+                  color: const Color(0xff5d6798),
                 ),
                 SizedBox(
                   height: height * 0.02,
@@ -110,12 +126,17 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
             ),
             Column(
               children: [
-                GeneralAppText(text: "End Date"),
+                GeneralAppText(
+                  text: "End Date",
+                  color: const Color(0xff5d6798),
+                ),
                 SizedBox(
                   height: height * 0.01,
                 ),
                 TaskCreateSeparator(
                   width: width * 0.3,
+                  height: 2,
+                  color: const Color(0xff5d6798),
                 ),
                 SizedBox(
                   height: height * 0.02,
@@ -133,9 +154,14 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
             )
           ],
         ),
-        GeneralAppText(text: "Priority"),
+        GeneralAppText(
+          text: "Priority",
+          color: const Color(0xff5d6798),
+        ),
         TaskCreateSeparator(
           width: MediaQuery.of(context).size.width * 0.3,
+          height: 2,
+          color: const Color(0xff5d6798),
         ),
         Priority(
           initialPriority: widget.updateTask != null
@@ -147,7 +173,8 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
         ),
         CreateButton(
           onPressed: () {
-            if (_title.length > 3 &&
+            if (_title != null &&
+                _title.length > 2 &&
                 _start != null &&
                 _end != null &&
                 _priority != null) {
@@ -180,7 +207,7 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
             } else {
               showAlert(
                   "Alert",
-                  "Title must contain at least 4 and start, end, priority sections cannot be blank.",
+                  "Title must contain at least 3 and start, end, priority sections cannot be blank.",
                   context);
             }
           },
@@ -190,15 +217,44 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
   }
 
   void showAlert(title, content, context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     AlertDialog alert = AlertDialog(
       title: Text(title),
       content: Text(content),
+      shape: RoundedRectangleBorder(
+        borderRadius:
+            BorderRadius.circular(MediaQuery.of(context).size.height * 0.044),
+      ),
       actions: [
-        RaisedButton(
-          child: Text("Tamam"),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        InkWell(
+          onTap: () => Navigator.of(context).pop(),
+          child: Container(
+              margin: EdgeInsets.only(right: width / 20, bottom: height / 100),
+              width: width * 0.17,
+              height: height * 0.058,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40.0),
+                gradient: LinearGradient(
+                  begin: Alignment(0.7, -0.76),
+                  end: Alignment(-0.68, 0.72),
+                  colors: [const Color(0xff5d6798), const Color(0xff767fae)],
+                  stops: [0.0, 1.0],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xff929ac2),
+                    offset: Offset(0, 3),
+                    blurRadius: 3,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: GeneralAppText(
+                  text: "OK",
+                  size: 15,
+                ),
+              )),
         )
       ],
     );

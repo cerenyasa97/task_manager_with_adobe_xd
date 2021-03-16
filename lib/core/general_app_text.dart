@@ -8,7 +8,13 @@ class GeneralAppText extends StatelessWidget {
   final String family;
   final FontStyle style;
 
-  GeneralAppText({@required this.text, this.size, this.color, this.weight, this.family, this.style});
+  GeneralAppText(
+      {@required this.text,
+      this.size,
+      this.color,
+      this.weight,
+      this.family,
+      this.style});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +22,11 @@ class GeneralAppText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          color: color ?? Colors.white,
-          fontSize: size ?? 20 * _scaleFactor,
-          fontWeight: weight ?? FontWeight.w600,
-          fontFamily: family ?? 'Cambria',
-          fontStyle: style ?? FontStyle.italic,
+        color: color ?? Colors.white,
+        fontSize: size ?? 20 * _scaleFactor,
+        fontWeight: weight ?? FontWeight.w600,
+        fontFamily: family ?? 'Cambria',
+        fontStyle: style ?? FontStyle.italic,
       ),
     );
   }

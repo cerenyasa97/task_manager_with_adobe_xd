@@ -20,6 +20,8 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return BlocBuilder<TaskBloc, TaskState>(builder: (context, state) {
       if (state is GetTaskState) {
         priorityColor = state.taskList[index].priorityColor;
@@ -27,11 +29,10 @@ class TaskCard extends StatelessWidget {
         return InkWell(
           onTap: () {
             return showDialog(
-              context: context,
-              builder: (context){
-                return DescriptionDialog(index: index);
-              }
-            );
+                context: context,
+                builder: (context) {
+                  return DescriptionDialog(index: index);
+                });
           },
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -50,33 +51,46 @@ class TaskCard extends StatelessWidget {
             ),
             child: Column(
               children: [
+                SizedBox(
+                  height: height / 80,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    IsDoneCheck(index: index,),
-                    GeneralAppText(text: taskTitle.length < 9 ? taskTitle : taskTitle.substring(0, 5) + "..."),
+                    IsDoneCheck(
+                      index: index,
+                    ),
+                    GeneralAppText(
+                        text: taskTitle.length < 9
+                            ? taskTitle
+                            : taskTitle.substring(0, 5) + "..."),
                   ],
                 ),
-                Divider(thickness: 2,),
-                SizedBox(height: MediaQuery.of(context).size.height / 80),
+                Divider(
+                  thickness: 2,
+                  color: Colors.white24,
+                ),
+                SizedBox(height: height / 80),
                 LastTaskDateTimeText(title: "start", index: index),
-                SizedBox(height: MediaQuery.of(context).size.height / 40,),
+                SizedBox(
+                  height: height / 40,
+                ),
                 LastTaskDateTimeText(title: "end", index: index),
               ],
             ),
           ),
         );
-      }
-      else {
+      } else {
         return TaskErrorWidget();
       }
     });
   }
 
-    convertColor(){
-      var color = priorityColor;
-      var valueString = color.split('(0x')[1].split(')')[0];
-      var value = int.parse(valueString, radix: 16);
-      var otherColor = new Color(value);
-      return otherColor;
-    }
+  convertColor() {
+    var color = priorityColor;
+    var valueString = color.split('(0x')[1].split(')')[0];
+    var value = int.parse(valueString, radix: 16);
+    var otherColor = new Color(value);
+    return otherColor;
+  }
 }

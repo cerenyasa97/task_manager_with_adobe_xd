@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TaskCreateSeparator extends StatelessWidget {
-
   final double width;
   final double height;
-  final double color;
+  final Color color;
 
-  const TaskCreateSeparator({Key key, this.width, this.height, this.color}) : super(key: key);
+  const TaskCreateSeparator({Key key, this.width, this.height, this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

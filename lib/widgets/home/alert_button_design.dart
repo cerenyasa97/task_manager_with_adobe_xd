@@ -31,18 +31,18 @@ class AlertButtonDesign extends StatelessWidget {
             color: Colors.white,
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+            borderRadius: BorderRadius.circular(40.0),
             gradient: LinearGradient(
-              begin: Alignment(0.0, -1.0),
-              end: Alignment(0.0, 0.58),
-              colors: [const Color(0xfff89d00), const Color(0xffe22a2a)],
+              begin: Alignment(0.7, -0.76),
+              end: Alignment(-0.68, 0.72),
+              colors: [const Color(0xff5d6798), const Color(0xff767fae)],
               stops: [0.0, 1.0],
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0x87ffffff),
+                color: const Color(0xff929ac2),
                 offset: Offset(0, 3),
-                blurRadius: 10,
+                blurRadius: 3,
               ),
             ],
           ),

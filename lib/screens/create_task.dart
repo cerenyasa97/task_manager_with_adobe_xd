@@ -5,7 +5,6 @@ import 'package:task_manager_with_xd/widgets/create_task/create_task_body.dart';
 import 'package:task_manager_with_xd/widgets/task_background.dart';
 
 class CreateTask extends StatelessWidget {
-
   final Task updateTask;
 
   CreateTask({this.updateTask});
@@ -15,13 +14,21 @@ class CreateTask extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: GeneralAppText(text: "Create Task", size: 25, color: Colors.white, weight: FontWeight.bold),
+        iconTheme: IconThemeData(color: const Color(0xff5d6798)),
+        backgroundColor: Colors.white,
+        elevation: 1,
+        title: GeneralAppText(
+            text: "Create Task",
+            size: 25,
+            color: const Color(0xff5d6798),
+            weight: FontWeight.bold),
       ),
       body: Stack(
         children: [
           TaskBackground(),
-          CreateTaskBody(updateTask: updateTask,),
+          CreateTaskBody(
+            updateTask: updateTask,
+          ),
         ],
       ),
     );

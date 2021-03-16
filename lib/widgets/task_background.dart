@@ -7,7 +7,10 @@ class TaskBackground extends StatelessWidget {
     return Container(
       width: size.width,
       height: size.height,
-      child:  Image.asset("assets/images/gradient.png", fit: BoxFit.cover,),
+      child: Image.asset(
+        "assets/images/background.png",
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

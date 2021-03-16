@@ -1,4 +1,3 @@
-
 // Homepage body structure
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,8 +25,11 @@ class _HomepageBodyState extends State<HomepageBody> {
   Widget build(BuildContext context) {
     final taskBloc = BlocProvider.of<TaskBloc>(context);
     taskBloc.add(GetTasksEvent(date: widget.date));
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Column(
       children: [
+        SizedBox(height: MediaQuery.of(context).size.height * 0.04),
         ChooseMonth(choosenMonth: (int monthIndex) {
           setState(() {
             this.monthIndex = monthIndex;
@@ -57,31 +59,46 @@ class _HomepageBodyState extends State<HomepageBody> {
                 date: widget.date,
               ),
               Positioned(
-                bottom: MediaQuery.of(context).size.height / 68,
-                left: MediaQuery.of(context).size.width / 6,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    BottomButtons(
-                        onTap: () {
-                          taskBloc
-                              .add(GetTasksEvent(date: "getLast", isDone: 1));
-                        },
-                        buttonIcon: Icons.done),
-                    BottomButtons(
-                        onTap: () {
-                          taskBloc
-                              .add(GetTasksEvent(date: "getLast", isDone: 0));
-                        },
-                        buttonIcon: Icons.close),
-                    BottomButtons(
-                        onTap: () {
-                          setState(() {
-                            tappedIndex = 35;
-                          });
-                        },
-                        buttonIcon: Icons.all_inclusive),
-                  ],
+                bottom: height / 68,
+                left: width / 10,
+                child: Container(
+                  width: width * 0.80,
+                  height: height * 0.09,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(47.0),
+                    color: const Color(0xffe8e8e8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0x29000000),
+                        offset: Offset(0, 3),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BottomButtons(
+                          onTap: () {
+                            taskBloc
+                                .add(GetTasksEvent(date: "getLast", isDone: 1));
+                          },
+                          buttonIcon: Icons.done),
+                      BottomButtons(
+                          onTap: () {
+                            taskBloc
+                                .add(GetTasksEvent(date: "getLast", isDone: 0));
+                          },
+                          buttonIcon: Icons.close),
+                      BottomButtons(
+                          onTap: () {
+                            setState(() {
+                              tappedIndex = 35;
+                            });
+                          },
+                          buttonIcon: Icons.all_inclusive),
+                    ],
+                  ),
                 ),
               ),
             ],

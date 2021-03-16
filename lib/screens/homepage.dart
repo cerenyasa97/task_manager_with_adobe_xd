@@ -6,7 +6,6 @@ import 'package:task_manager_with_xd/screens/create_task.dart';
 import 'package:task_manager_with_xd/widgets/home/homepage_body.dart';
 import 'package:task_manager_with_xd/widgets/task_background.dart';
 
-
 // ignore: must_be_immutable
 class Homepage extends StatelessWidget {
   TaskBloc taskBloc;
@@ -20,10 +19,12 @@ class Homepage extends StatelessWidget {
     taskBloc.add(GetTasksEvent());
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
+          elevation: 1,
           title: GeneralAppText(
             text: "Task Manager",
             size: 25,
+            color: const Color(0xff5d6798),
           ),
           actions: [
             Padding(
@@ -33,6 +34,7 @@ class Homepage extends StatelessWidget {
                 icon: Icon(
                   Icons.add_circle_outline_rounded,
                   size: 40,
+                  color: const Color(0xff5d6798),
                 ),
                 onPressed: () {
                   Navigator.of(context).push(

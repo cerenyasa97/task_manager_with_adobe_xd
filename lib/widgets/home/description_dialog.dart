@@ -19,7 +19,8 @@ class DescriptionDialog extends StatelessWidget {
         return AlertDialog(
           title: Text(taskList[index].taskTitle ?? "Alert"),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(
+                MediaQuery.of(context).size.height * 0.044),
           ),
           backgroundColor: const Color(0xffe8e8e8),
           content: Text(taskList[index].taskDescription ?? "error"),

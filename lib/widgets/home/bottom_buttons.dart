@@ -11,28 +11,17 @@ class BottomButtons extends StatelessWidget {
     return InkWell(
       onTap: () => onTap(),
       child: Container(
-        margin: EdgeInsets.all(MediaQuery.of(context).size.width / 30),
-        width: 60.0,
-        height: 60.0,
+        margin: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.06),
+        width: MediaQuery.of(context).size.width * 0.12,
+        height: MediaQuery.of(context).size.height * 0.065,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-          gradient: LinearGradient(
-            begin: Alignment(0.0, -1.0),
-            end: Alignment(0.0, 1.0),
-            colors: [const Color(0xffe8e8e8), const Color(0xff979797)],
-            stops: [0.0, 1.0],
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0x29000000),
-              offset: Offset(0, 3),
-              blurRadius: 10,
-            ),
-          ],
+          border: Border.all(width: 3.0, color: const Color(0xff767fae)),
         ),
         child: Icon(
           buttonIcon,
-          color: Colors.black,
+          color: const Color(0xff767fae),
           size: 30,
         ),
       ),

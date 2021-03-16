@@ -4,7 +4,6 @@ import 'package:task_manager_with_xd/utils/constants.dart';
 import 'package:task_manager_with_xd/widgets/home/increase_decrease_arrow.dart';
 
 class ChooseMonth extends StatefulWidget {
-
   final Function(int) choosenMonth;
 
   ChooseMonth({@required this.choosenMonth});
@@ -25,19 +24,20 @@ class _ChooseMonthState extends State<ChooseMonth> {
           flag: "f",
           onTapped: (int value) {
             setState(() {
-              monthIndex += value;
+              monthIndex > 0 ? monthIndex += value : monthIndex = 11;
             });
             widget.choosenMonth(monthIndex);
           },
         ),
-        GeneralAppText(text:
-          Constants.getCurrentMonth(monthIndex),
+        GeneralAppText(
+          text: Constants.getCurrentMonth(monthIndex),
+          color: const Color(0xff5d6798),
         ),
         IncreaseDecreaseArrow(
           flag: "d",
           onTapped: (int value) {
             setState(() {
-              monthIndex += value;
+              monthIndex < 11 ? monthIndex += value : monthIndex = 0;
               widget.choosenMonth(monthIndex);
             });
           },
